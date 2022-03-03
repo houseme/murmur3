@@ -23,6 +23,7 @@ func New64WithSeed(seed uint32) hash.Hash64 {
 	return d
 }
 
+// Sum appends the current hash to b and returns the resulting slice.
 func (d *digest64) Sum(b []byte) []byte {
 	h1 := d.Sum64()
 	return append(b,

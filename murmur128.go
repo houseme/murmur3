@@ -1,7 +1,6 @@
 package murmur3
 
 import (
-	//"encoding/binary"
 	"hash"
 	"math/bits"
 	"unsafe"
@@ -45,10 +44,12 @@ func New128WithSeed(seed uint32) Hash128 {
 	return d
 }
 
+// Size returned size of digest in bytes.
 func (d *digest128) Size() int { return 16 }
 
 func (d *digest128) reset() { d.h1, d.h2 = uint64(d.seed), uint64(d.seed) }
 
+// Sum appends the current hash to dst and returns the result
 func (d *digest128) Sum(b []byte) []byte {
 	h1, h2 := d.Sum128()
 	return append(b,

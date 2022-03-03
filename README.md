@@ -3,21 +3,18 @@ murmur3
 
 [![Build Status](https://travis-ci.org/spaolacci/murmur3.svg?branch=master)](https://travis-ci.org/spaolacci/murmur3)
 
-Native Go implementation of Austin Appleby's third MurmurHash revision (aka
-MurmurHash3).
+#### Native Go implementation of Austin Appleby's third MurmurHash revision (aka MurmurHash3).
 
-Reference algorithm has been slightly hacked as to support the streaming mode
-required by Go's standard [Hash interface](http://golang.org/pkg/hash/#Hash).
+#### Reference algorithm has been slightly hacked as to support the streaming mode required by Go's standard [Hash interface](http://golang.org/pkg/hash/#Hash).
 
 
 Benchmarks
 ----------
 
-Go tip as of 2014-06-12 (i.e almost go1.3), core i7 @ 3.4 Ghz. All runs
-include hasher instantiation and sequence finalization.
+#### Go tip as of 2014-06-12 (i.e almost go1.3), core i7 @ 3.4 Ghz. All runs include hasher instantiation and sequence finalization.
 
-<pre>
 
+```html
 Benchmark32_1        500000000     7.69 ns/op      130.00 MB/s
 Benchmark32_2        200000000     8.83 ns/op      226.42 MB/s
 Benchmark32_4        500000000     7.99 ns/op      500.39 MB/s
@@ -46,12 +43,9 @@ Benchmark128_1024     10000000      250 ns/op     4094.38 MB/s
 Benchmark128_2048      5000000      477 ns/op     4290.75 MB/s
 Benchmark128_4096      2000000      940 ns/op     4353.29 MB/s
 Benchmark128_8192      1000000     1838 ns/op     4455.47 MB/s
+```
 
-</pre>
-
-
-<pre>
-
+```html
 benchmark              Go1.0 MB/s    Go1.1 MB/s  speedup    Go1.2 MB/s  speedup    Go1.3 MB/s  speedup
 Benchmark32_1               98.90        118.59    1.20x        114.79    0.97x        130.00    1.13x
 Benchmark32_2              168.04        213.31    1.27x        210.65    0.99x        226.42    1.07x
@@ -81,6 +75,5 @@ Benchmark128_1024         1964.36       3979.67    2.03x       4034.01    1.01x 
 Benchmark128_2048         2225.07       4156.93    1.87x       4244.17    1.02x       4290.75    1.01x
 Benchmark128_4096         2360.15       4299.09    1.82x       4392.35    1.02x       4353.29    0.99x
 Benchmark128_8192         2411.50       4356.84    1.81x       4480.68    1.03x       4455.47    0.99x
-
-</pre>
+```
 

@@ -28,8 +28,10 @@ type digest struct {
 	bmixer
 }
 
+// BlockSize is the block size of the hash algorithm in bytes.
 func (d *digest) BlockSize() int { return 1 }
 
+// Write ith byte of data.
 func (d *digest) Write(p []byte) (n int, err error) {
 	n = len(p)
 	d.clen += n
@@ -57,6 +59,7 @@ func (d *digest) Write(p []byte) (n int, err error) {
 	return n, nil
 }
 
+// Reset the hash to its initial state.
 func (d *digest) Reset() {
 	d.clen = 0
 	d.tail = nil
